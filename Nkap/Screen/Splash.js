@@ -1,0 +1,71 @@
+import { StyleSheet, View, Text,TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+
+
+export default function Splash({navigation}) {
+  
+    return (
+        <View style={styles.container}>
+        <Text style = {styles.titre}>Bienvenue sur ExpressNkap</Text>
+        <Text>La securité de votre Argent notre priorité</Text>
+        <View style={styles.card}>
+            <TouchableOpacity style={styles.icon}>
+                <Text style ={styles.txt}>Se connecter</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.icon1}>
+                 <Text style ={styles.txt}>S'inscrire</Text>
+            </TouchableOpacity>
+        </View>
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#f10f2f5',
+      alignItems: 'left',
+      justifyContent: 'top',
+      paddingTop:48
+    },
+
+    titre:{
+        fontWeight:'bold',
+        fontSize:30,
+    },
+    
+    card:{
+            backgroundColor:"white",
+            bottom:-70,
+            height:250,
+            width:"90%",
+            alignItems:"center",
+            borderRadius:15,
+            left:15,
+            shadowColor:"black",
+            shadowOpacity:15,
+    },
+    icon:{
+            bottom:-55,
+            backgroundColor:"#64a8fc",
+            borderRadius:5,
+            width:"70%",
+            alignItems:"center",
+            height:40,
+            justifyContent:"space-evenly"
+    },
+    icon1:{
+            bottom:-100,
+            backgroundColor:"#64a8fc",
+            width:"70%",
+            borderRadius:5,
+            alignItems:"center",
+            height:40,
+            justifyContent:"space-evenly",
+    },
+    txt:{
+        color:"white",
+        fontWeight:"bold"
+    }
+  });

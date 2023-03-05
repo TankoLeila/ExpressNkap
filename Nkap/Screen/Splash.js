@@ -9,7 +9,7 @@ export default function Splash({navigation}) {
         <Text style = {styles.titre}>Bienvenue sur ExpressNkap</Text>
         <Text>La securité de votre Argent notre priorité</Text>
         <View style={styles.card}>
-            <TouchableOpacity style={styles.icon}>
+            <TouchableOpacity style={styles.icon} onPress={()=>navigation.navigate("Connection")}>
                 <Text style ={styles.txt}>Se connecter</Text>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.icon1} onPress={()=>navigation.navigate("Register")}>

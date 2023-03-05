@@ -12,7 +12,7 @@ export default function Splash({navigation}) {
             <TouchableOpacity style={styles.icon}>
                 <Text style ={styles.txt}>Se connecter</Text>
             </TouchableOpacity>
-            <TouchableOpacity style = {styles.icon1}>
+            <TouchableOpacity style = {styles.icon1} onPress={()=>navigation.navigate("Register")}>
                  <Text style ={styles.txt}>S'inscrire</Text>
             </TouchableOpacity>
         </View>

@@ -6,6 +6,8 @@ export default function Root(){
     return(
             <stack.Navigator initialRouteName="Splash">
                     <stack.Screen component={Splash} name = " ExpressNkap"/>
+                    
+
             </stack.Navigator>
     );
 }

@@ -11,7 +11,7 @@ export default function Root(){
                     <stack.Screen component={Splash} name = " ExpressNkap"/>
                     <stack.Screen component={Inscription} name= "Register"/>
                     <stack.Screen component={Connection} name="Connection"/>
-                    <stack.Screen component={Personnel} name="Personnel"/>
+                    <stack.Screen component={Personnel} name="personnel"/>
             </stack.Navigator>
     );
 }

@@ -1,13 +1,18 @@
-import { StyleSheet, View, Text,TouchableOpacity } from 'react-native';
+import { StyleSheet, View,Text,TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Image } from 'expo-image';
 
 
 export default function Splash({navigation}) {
   
     return (
+      <SafeAreaProvider>
+      
+      
         <View style={styles.container}>
-        <Text style = {styles.titre}>Bienvenue sur ExpressNkap</Text>
-        <Text>La securité de votre Argent notre priorité</Text>
+      
+        <Text style={styles.titre}>La securité de votre Argent notre priorité</Text>
         <View style={styles.card}>
             <TouchableOpacity style={styles.icon} onPress={()=>navigation.navigate("Connection")}>
                 <Text style ={styles.txt}>Se connecter</Text>
@@ -18,6 +23,7 @@ export default function Splash({navigation}) {
         </View>
         <StatusBar style="auto" />
       </View>
+      </SafeAreaProvider>
     );
   }
 
@@ -32,7 +38,10 @@ export default function Splash({navigation}) {
 
     titre:{
         fontWeight:'bold',
-        fontSize:30,
+        textAlign:'center',
+        textShadowColor:'#000',
+        
+        fontSize:20,
     },
     
     card:{

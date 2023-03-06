@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 const Images = () => {
@@ -133,4 +134,24 @@ const styles = StyleSheet.create({
     
     }
 
+=======
+import {Text,TouchableOpacity,View,StyleSheet} from 'react-native';
+
+export default function Connection(){
+    return(
+       <View>
+        
+       </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#f10f2f5',
+      alignItems: 'left',
+      justifyContent: 'top',
+      paddingTop:48
+    }
+>>>>>>> 05c6de1ed4732f6d8b9c8a96324d1242d540904d
 });

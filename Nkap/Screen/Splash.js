@@ -40,7 +40,7 @@ export default function Splash({navigation}) {
         fontWeight:'bold',
         textAlign:'center',
         textShadowColor:'#000',
-        
+        bottom:80,
         fontSize:20,
     },
     

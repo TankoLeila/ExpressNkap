@@ -11,12 +11,12 @@ const stack = createStackNavigator()
 export default function Root(){
     return(
 
-            <stack.Navigator initialRouteName="Recharge" >
+            <stack.Navigator initialRouteName="splashScreen" >
                     <stack.Screen component={Splash} name = " ExpressNkap"/>
                     <stack.Screen component={SignInScreen} name= "Register"/>
                     <stack.Screen component={Connection} name="Connection"/>
                     <stack.Screen component={Accueil} name ="Accueil"/>
-                    <stack.Screen component={Splashscreen} name="splashScreen"/>
+                    <stack.Screen options={{headerShown:false}} component={Splashscreen} name="splashScreen"/>
                     <stack.Screen component={Recharge} name="Recharge"/>
             </stack.Navigator>
     );

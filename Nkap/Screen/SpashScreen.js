@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Logo from '../assets/splash.png';
 import Splash from '../Screen/Splash';
 
-const BGColor = "orangered"
+const BGColor = "aqua"
 
 export default function SplashScreen({navigation}) {
 

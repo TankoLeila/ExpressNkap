@@ -6,32 +6,32 @@ import { AntDesign } from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
 import { Image } from "react-native-web";
 
-export default function Accueil(){
+export default function Accueil({navigation}){
     return(
         <View style = {styles.container}>
-            <View style ={styles.header}>
-                    <TouchableOpacity>
+             <View style ={styles.header}>
+                    <TouchableOpacity onPress={()=>navigation.navigate("personnel")}>
                     <MaterialCommunityIcons name="account-details-outline" size={50} color="orange" />
                     </TouchableOpacity>
                     <Text style={styles.headtext}>Personnal</Text>
-            </View>    
+            </View> 
             <View style={styles.home}>
                     <FontAwesome5 name="home" size={40} color="black" />
                     <Text style={styles.hometext}>Compte</Text>
             </View>
             <View style = {styles.card}>
             <View style = {{height:80,width:80,
-                            borderColor:'#dddddd'}}>
+                            borderColor:'#ddddd'}}>
                                 <View style = {{flex:2}}>
-                                 image  
+                                   
                                 </View>
-                            </View>
+             </View>
                     <Text style= {styles.cardtext}>votre argent est en toute securité</Text>
             </View>
             <View style = {styles.card1}>
                     <Text style = {styles.solde}>50000 XAF</Text>
                     <View style = {styles.operation}>
-                    <TouchableOpacity style = {styles.recharge}>
+                    <TouchableOpacity style = {styles.recharge} onPress={()=>navigation.navigate("Recharge")}>
                         <Text style = {styles.card1text}>+ Recharger</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.envoyer}>
@@ -40,12 +40,12 @@ export default function Accueil(){
                     </View>
             </View>
             <View style = {styles.scroll}>
-                        <ScrollView horizontal={true}
+            <ScrollView horizontal={true}
                         showsHorizontalScrollIndicator={false}>
                                 <View style = {{height:110,width:110,marginLeft:20,
                             borderWidth:0.5,borderColor:'#dddddd'}}>
                                 <View style = {{flex:2}}>
-                                   image
+                                   
                                 </View>
                                 <View style = {{flex:1,paddingLeft:10,
                                 paddingTop:10}}>
@@ -56,7 +56,7 @@ export default function Accueil(){
                             <View style = {{height:110,width:110,marginLeft:20,
                             borderWidth:0.5,borderColor:'#dddddd'}}>
                                 <View style = {{flex:2}}>
-                                image
+                                
                                 </View>
                                 <View style = {{flex:1,paddingLeft:10,
                                 paddingTop:10}}>
@@ -67,16 +67,15 @@ export default function Accueil(){
                             <View style = {{height:110,width:110,marginLeft:20,
                             borderWidth:0.5,borderColor:'#dddddd'}}>
                                 <View style = {{flex:2}}>
-                                image
+                                
                                 </View>
                                 <View style = {{flex:1,paddingLeft:10,
                                 paddingTop:10}}>
                                     <Text>home</Text>
                                 </View>
                             </View>
-                        </ScrollView>
-                </View>
-            
+                        </ScrollView>    
+            </View>
         </View>
         
     );

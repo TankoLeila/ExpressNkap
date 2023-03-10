@@ -11,13 +11,8 @@ export default function Splash({navigation}) {
       
       
         <View style={styles.container}>
-<<<<<<< HEAD
         <Text style = {styles.titre}>Bienvenue                                                                                                       sur ExpressNkap</Text>
         <Text style = {styles.soustitre}>La securité de votre Argent, notre priorité</Text>
-=======
-      
-        <Text style={styles.titre}>La securité de votre Argent notre priorité</Text>
->>>>>>> 05c6de1ed4732f6d8b9c8a96324d1242d540904d
         <View style={styles.card}>
             <TouchableOpacity style={styles.icon} onPress={()=>navigation.navigate("Connection")}>
                 <Text style ={styles.txt}>Se connecter</Text>
@@ -44,7 +39,6 @@ export default function Splash({navigation}) {
 
     titre:{
         fontWeight:'bold',
-<<<<<<< HEAD
         fontSize:30,
         left:50
     },
@@ -52,12 +46,6 @@ export default function Splash({navigation}) {
          fontWeight:"bold",
          bottom:-20,
          left:20
-=======
-        textAlign:'center',
-        textShadowColor:'#000',
-        bottom:80,
-        fontSize:20,
->>>>>>> 05c6de1ed4732f6d8b9c8a96324d1242d540904d
     },
     
     card:{

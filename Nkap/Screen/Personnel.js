@@ -34,7 +34,6 @@ export default function Personnel(){
                     <Ionicons name="notifications-outline" size={27} color="#5ebfae" style = {styles.An4} />
                     <Text style = {styles.Ai4}>Notifications</Text>
                 </TouchableOpacity>
-                
             </View> 
 
             <View style = {styles.Par}>
@@ -46,13 +45,22 @@ export default function Personnel(){
                     <AntDesign name="infocirlceo" size={24} color="#5ebfae" style = {styles.An5} />
                     <Text style = {styles.Para2}>À propos de nous</Text>
                 </TouchableOpacity>
-                
-                    <MaterialIcons name="policy" size={28} color="#5ebfae" style = {styles.An6} />
+
+                <TouchableOpacity >
+                    <MaterialIcons name="policy" size={28} color="#5ebfae"  style = {styles.An6}/>
                     <Text style = {styles.Ai5}>Politique de confidentialité</Text>
+                </TouchableOpacity>
                 
                 <TouchableOpacity>
                     <Entypo name="text-document" size={30} color="#5ebfae" style = {styles.An7} />
                     <Text style = {styles.Ai6}>Conditions Générales</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View style = {styles.Back4}>
+                <TouchableOpacity>
+                <MaterialIcons name="logout" size={34} color="#5ebfae" style = {styles.An8} />
+                    <Text style={styles.Ai7}>Se déconnecter</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: '#f2f2f9',
-        paddingTop:38
+        paddingTop:18
     },
 
     Back:{
@@ -75,18 +83,18 @@ const styles = StyleSheet.create({
         shadowColor:"silver",
         shadowOpacity:"100%",
         shadowRadius:"10px",
-        shadowOffset:"15px"
+        shadowOffset:"30px"
     },
 
     Ai:{
-        left:85,
+        left:105,
         top:-10,
         fontWeight:"bold",
         fontSize:20
     },
 
     An:{
-        left:35,
+        left:45,
         top:15
     },
 
@@ -120,7 +128,7 @@ const styles = StyleSheet.create({
 
     Ai2:{
         top:8,
-        left:100,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     },
@@ -132,7 +140,7 @@ const styles = StyleSheet.create({
 
     Ai3:{
         top:29,
-        left:100,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     },
@@ -144,7 +152,7 @@ const styles = StyleSheet.create({
 
     Ai4:{
         top:48,
-        left:100,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     },
@@ -156,7 +164,7 @@ const styles = StyleSheet.create({
         backgroundColor:"white",
         borderRadius:"10px",
         width:"95%",
-        height:300,
+        height:240,
         shadowColor:"silver",
         shadowOpacity:"100%",
         shadowRadius:"10px",
@@ -178,31 +186,57 @@ const styles = StyleSheet.create({
     Para2:{
         fontSize:18,
         top:12,
-        left:90,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     },
 
     An6:{
-        top:75,
+        top:55,
         left:49
     },
 
     Ai5:{
-        top:48,
-        left:92,
+        top:28,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     },
 
     An7:{
-        top:105,
+        top:75,
         left:49
     },
 
     Ai6:{
-        top:78,
-        left:95,
+        top:48,
+        left:105,
+        fontSize:20,
+        fontWeight:"bold"
+    },
+    
+    Back4:{
+        top:100,
+        left:10,
+        backgroundColor:"white",
+        borderRadius:"10px",
+        width:"95%",
+        height:60,
+        shadowColor:"silver",
+        shadowOpacity:"100%",
+        shadowRadius:"10px",
+        shadowOffset:"40px",
+        top:120
+    },
+
+    An8:{
+        top:15,
+        left:55
+    },
+
+    Ai7:{
+        top:-15,
+        left:105,
         fontSize:20,
         fontWeight:"bold"
     }

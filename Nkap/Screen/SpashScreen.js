@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Logo from '../assets/splash.png';
 import Splash from '../Screen/Splash';
 
-const BGColor = "aqua"
+const BGColor = "#63CCFF"
 
 export default function SplashScreen({navigation}) {
 
@@ -114,6 +114,7 @@ export default function SplashScreen({navigation}) {
                 transform: [
                     { translateY: startAnimation }
                 ]
+                
             }}>
 
                 <Animated.View style={{
@@ -131,7 +132,8 @@ export default function SplashScreen({navigation}) {
                             { scale: scaleLogo },
 
                         ]
-                    }}></Animated.Image>
+                    }}>
+                    </Animated.Image>
 
                     <Animated.Text style={{
                         fontSize: 25,
@@ -142,7 +144,6 @@ export default function SplashScreen({navigation}) {
                             { scale: scaleTitle }
                         ]
                     }}>ExpressNkap</Animated.Text>
-
                 </Animated.View>
 
             </Animated.View>
@@ -158,11 +159,10 @@ export default function SplashScreen({navigation}) {
                 transform: [
                     { translateY: contentTransition }
                 ]
-            }}>
-
-                
+            }}>    
             <Splash navigation={navigation}></Splash>
             </Animated.View>
+            
             
         </View>
     );

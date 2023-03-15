@@ -1,51 +1,50 @@
 import React from "react";
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-const Images = () => {
-    return (
-        <View>
-            <Text>This is Images file</Text>
-            <Image style={styles.backgroundImg} source={require("../assets/adaptive-icon.png")} />
-        </View>
-    );
-}
+import { Entypo } from '@expo/vector-icons';
 
 export default function Connection({navigation}) {
     return (
-        <View style={styles.background}>
+        <View style={styles.container}>
+            <View style = {styles.card}>
+            <Image source={require('./sign.png')} style = {styles.Img}/>
+            </View>
             <View style={styles.connectionPage}>
-
-                <View style={styles.ENkap}>
-                    <Text style={styles.En}>ExpressNkap</Text>
-                </View>
-
                 <View style={styles.connect}>
-                    <Text style={styles.TextConnexion}> <FontAwesome name="sign-in" size={24} color="black" /> Connexion </Text>
+                    <Text style={styles.TextConnexion}> <FontAwesome name="sign-in" size={24} color="#63CCFF" /> Connexion </Text>
                 </View>
-
-
-                <View style={styles.mailConnexion}>
-
-                    <Text style={styles.TextMail}>Email</Text>
-                    <TextInput style={styles.email} placeholder="please enter your mail"></TextInput>
+                <View style = {styles.email}>
+                    <Entypo name="email" size={24} color="black" />
+                    <TextInput placeholder="Email"  style = {styles.TextMail}></TextInput>
                 </View>
-
-                <View style={styles.pwdConnexion}>
-                    <Text style={styles.TextPwd}>PassWord</Text>
-                    <TextInput style={styles.pwd} placeholder="please enter your password"></TextInput>
+                <View style = {styles.password}>
+                    <FontAwesome name="lock" size={24} color="black" />
+                    <TextInput placeholder="Password"  style = {styles.TextPwd}></TextInput>
                 </View>
-
-                <View style={styles.BtnValid} >
-                    <TouchableOpacity style={styles.BtnValidConnect} onPress={()=>navigation.navigate("Accueil")}>
-                        <Text>Valider</Text>
+                <TouchableOpacity><Text style = {styles.forgotpwd}>Forgot?</Text></TouchableOpacity>
+                <View >
+                    <TouchableOpacity style = {styles.login} onPress={()=>navigation.navigate("Accueil")}>
+                                <Text style = {styles.textlogin}>Login</Text>
                     </TouchableOpacity>
                 </View>
+                    <View style = {styles.reg}>
+                    <Text style={styles.new}>
+                        New to the App?
+                    </Text>
+                    <TouchableOpacity>
+                        <Text style = {styles.regtext}>Register</Text>
+                    </TouchableOpacity>
+                    </View>
             </View>
         </View>
     );
 }
 const styles = StyleSheet.create({
 
+    container:{
+            backgroundColor:"white",
+            width:"100%"
+    },
     connectionPage: {
         paddingVertical: 100,
         paddingHorizontal: 40,
@@ -53,19 +52,41 @@ const styles = StyleSheet.create({
         marginHorizontal: -5,
         borderRadius: 25,
         backgroundColor: 'white',
-        bottom: -80,
+        bottom: 0,
         width: "90%",
         right: -20,
-        shadowOpacity: 15,
-        shadowColor: "aqua",
-     
-
+        shadowOpacity:15,
+        shadowColor: "#63CCFF",
     },
+
+    card:{
+        backgroundColor:"#63CCFF",
+        height:320,
+        borderRadius:35,
+        bottom:-40
+    },
+
+    Img:{
+        height:"100%",
+        width:"100%",
+    },
+    reg:{
+            flexDirection:"row",
+            bottom:-80,
+            left:140
+    },
+
+    regtext:{
+        color:"#f4862f",
+        fontWeight:"bold"
+    },
+
+
     TextConnexion: {
         fontSize: 20,
         fontWeight: 'bold',
-        bottom: 50,
-        textAlign: "center",
+        bottom: 80,
+        left:-30,
     },
     Regis: {
         bottom: 50,
@@ -74,63 +95,45 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
 
     },
-    ENkap: {
-        bottom: 70,
-        left: 10
-    },
-    mailConnexion: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-
-    },
     email: {
-        right: 35,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
-        width: '55%',
-        borderRadius: 5,
-        left: -10,
-        color: "black",
-        borderWidth: 1,
-        borderColor: "#c2f2f9",
-
-
-    },
-    pwdConnexion: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        bottom: -40
-
+        flexDirection:"row",
+        borderColor: "#63CCFF",
+        bottom:50,
+        width:"100%",
+        borderBottomWidth:2
     },
 
-    pwd: {
-
-        right: 35,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
-        width: '55%',
-        borderRadius: 5,
-        left: -10,
-        color: "black",
-        borderWidth: 1,
-        borderColor: "#c2f2f9",
-
-
+    password:{
+        flexDirection:"row",
+        borderColor: "#63CCFF",
+        width:"100%",
+        borderBottomWidth:2
+    },
+    login:{
+            backgroundColor:"#63CCFF",
+            bottom:-50,
+            alignItems:"center",
+            borderRadius:10,
+            height:35,
+    },
+    textlogin:{
+        color:"white",
+        fontSize:20,
+        fontWeight:"bold"
+    },
+    forgotpwd:{
+        fontWeight:"bold",
+        color:"#f4862f",
+        left:240
     },
     TextMail: {
         fontWeight: 'bold',
-        fontSize: 17
+        fontSize: 17,
+        left:10
     },
     TextPwd: {
         fontWeight: 'bold',
-        fontSize: 15
+        fontSize: 15,
+        left:10
     },
-    BtnValidConnect: {
-        left: 190,
-        bottom: -60
-    },
-    background: {
-       backgroundColor:'white',
-    
-    }
   });

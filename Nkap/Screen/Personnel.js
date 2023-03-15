@@ -6,12 +6,12 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-export default function Personnel(){
+export default function Personnel({navigation}){
     return(
         <View style = {styles.container}>
             <View style = {styles.Back}>
-                <TouchableOpacity>
-                    <AntDesign name="questioncircleo" size={25} color="#5ebfae" style = {styles.An} />
+                <TouchableOpacity onPress={()=>navigation.navigate('aide')}>
+                    <AntDesign name="questioncircleo" size={25} color="#63CCFF" style = {styles.An} />
                     <Text style={styles.Ai}>Aide</Text>
                 </TouchableOpacity>
             </View>
@@ -21,17 +21,12 @@ export default function Personnel(){
             </View>
 
             <View style = {styles.Back2}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="user" size={24} color="#5ebfae" style = {styles.An2} />
+                <TouchableOpacity style = {styles.An2}>
+                    <FontAwesome5 name="user" size={24} color="#63CCFF" />
                     <Text style = {styles.Ai2}>Profil</Text>
                 </TouchableOpacity>
-                
-                <TouchableOpacity>
-                    <MaterialIcons name="security" size={27} color="#5ebfae" style = {styles.An3} />
-                    <Text style = {styles.Ai3}>Vérification</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Ionicons name="notifications-outline" size={27} color="#5ebfae" style = {styles.An4} />
+                <TouchableOpacity style = {styles.An4}>
+                    <Ionicons name="notifications-outline" size={27} color="#63CCFF"/>
                     <Text style = {styles.Ai4}>Notifications</Text>
                 </TouchableOpacity>
             </View> 
@@ -42,24 +37,20 @@ export default function Personnel(){
 
             <View style = {styles.Back3}>
                 <TouchableOpacity>
-                    <AntDesign name="infocirlceo" size={24} color="#5ebfae" style = {styles.An5} />
+                    <AntDesign name="infocirlceo" size={24} color="#63CCFF" style = {styles.An5} />
                     <Text style = {styles.Para2}>À propos de nous</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity >
-                    <MaterialIcons name="policy" size={28} color="#5ebfae"  style = {styles.An6}/>
+                    <MaterialIcons name="policy" size={28} color="#63CCFF"  style = {styles.An6}/>
                     <Text style = {styles.Ai5}>Politique de confidentialité</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity>
-                    <Entypo name="text-document" size={30} color="#5ebfae" style = {styles.An7} />
-                    <Text style = {styles.Ai6}>Conditions Générales</Text>
-                </TouchableOpacity>
             </View>
 
             <View style = {styles.Back4}>
                 <TouchableOpacity>
-                <MaterialIcons name="logout" size={34} color="#5ebfae" style = {styles.An8} />
+                <MaterialIcons name="logout" size={34} color="#63CCFF" style = {styles.An8} />
                     <Text style={styles.Ai7}>Se déconnecter</Text>
                 </TouchableOpacity>
             </View>
@@ -76,14 +67,13 @@ const styles = StyleSheet.create({
 
     Back:{
         backgroundColor:"white",
-        borderRadius:"10px",
+        borderRadius:10,
         width:"95%",
         left:10,
         height:60,
         shadowColor:"silver",
         shadowOpacity:"100%",
-        shadowRadius:"10px",
-        shadowOffset:"30px"
+        shadowRadius:10,
     },
 
     Ai:{
@@ -109,33 +99,33 @@ const styles = StyleSheet.create({
 
     Back2:{
         backgroundColor:"white",
-        borderRadius:"10px",
+        borderRadius:10,
         width:"95%",
         left:10,
         height:235,
         top:50,
         shadowColor:"silver",
         shadowOpacity:"100%",
-        shadowRadius:"10px",
-        shadowOffset:"30px"
+        shadowRadius:10,
         
     },
 
     An2:{
         top:30,
-        left:50
+        left:50,
+        flexDirection:"row"
     },
 
     Ai2:{
-        top:8,
-        left:105,
         fontSize:20,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        left:30
     },
 
     An3:{
         top:55,
-        left:48
+        left:48,
+        
     },
 
     Ai3:{
@@ -146,15 +136,16 @@ const styles = StyleSheet.create({
     },
 
     An4:{
-        top:75,
-        left:50
+        top:100,
+        left:50,
+        flexDirection:"row"
+
     },
 
     Ai4:{
-        top:48,
-        left:105,
         fontSize:20,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        left:25
     },
 
 
@@ -162,13 +153,12 @@ const styles = StyleSheet.create({
         top:100,
         left:10,
         backgroundColor:"white",
-        borderRadius:"10px",
+        borderRadius:10,
         width:"95%",
         height:240,
         shadowColor:"silver",
         shadowOpacity:"100%",
-        shadowRadius:"10px",
-        shadowOffset:"30px"
+        shadowRadius:10,
 
     },
 
@@ -203,10 +193,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold"
     },
 
-    An7:{
-        top:75,
-        left:49
-    },
+
 
     Ai6:{
         top:48,
@@ -219,13 +206,12 @@ const styles = StyleSheet.create({
         top:100,
         left:10,
         backgroundColor:"white",
-        borderRadius:"10px",
+        borderRadius:10,
         width:"95%",
         height:60,
         shadowColor:"silver",
         shadowOpacity:"100%",
-        shadowRadius:"10px",
-        shadowOffset:"40px",
+        shadowRadius:10,
         top:120
     },
 

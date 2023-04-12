@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { signInWithEmailAndPassword, getAuth } from 'firebase/auth' // permet de creer un user dans la bd
+import { initializeApp } from '@firebase/app' // permet d'initialiser l'app
+import { firebaseConfig } from "../Firebase"; //permet de configurer l'api
 
 export default function Connection({navigation}) {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const app = initializeApp(firebaseConfig)
+    const auth = getAuth(app)
+
+    const handlerLogin = () => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            console.log("User login !")
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+    }
+
     return (
         <View style={styles.container}>
             <View style = {styles.card}>
@@ -31,7 +51,7 @@ export default function Connection({navigation}) {
                     <Text style={styles.new}>
                         New to the App?
                     </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={handlerLogin}>
                         <Text style = {styles.regtext}>Register</Text>
                     </TouchableOpacity>
                     </View>

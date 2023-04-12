@@ -8,24 +8,46 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useForm, Controller } from "react-hook-form";
+import { AppConfig } from "react-native";
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth' // permet de creer un user dans la bd
+import { initializeApp } from '@firebase/app' // permet d'initialiser l'app
+import { firebaseConfig } from "../Firebase"; //permet de configurer l'api
 
 function SignInScreen({ navigation }) {
     const [hide, setHide] = useState(true);
-    const {
-      control,
-      handleSubmit,
-      getValues,
-      formState: { errors, isValid },
-    } = useForm({
-      mode: "onBlur",
-      defaultValues: {
-        mail: "",
-        password: "",
-        confirmPassword: "",
-      },
-    });
+     const {
+       control,
+       handleSubmit,
+       getValues,
+       formState: { errors, isValid },
+     } = useForm({
+       mode: "onBlur",
+       defaultValues: {
+         mail: "",
+         password: "",
+         confirmPassword: "",
+       },
+     });
+
+    const app = initializeApp(firebaseConfig) // permet d'initilaliser l'application et de travailler avec sa cle d'api
+    const auth = getAuth(app) //getAuth est une fonction qui permet de gerer l'authentification
+
+    const [email, setEmail] = useState('') // ce sont les hock permettant de stocker les objets. Il stock l'objet email et password
+    const [password, setPassword] = useState('') 
   
     const onSubmit = (signin) => navigation.navigate("PersonalData", { signin });
+
+    const handlerRegister = () => { // enrgistre un user dans la bd
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((useCredential) => {
+        console.log('User Created!')
+        const user = useCredential.user
+        console.log(user)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+    }
   
     return (
       <View style={styles.container}>
@@ -38,9 +60,9 @@ function SignInScreen({ navigation }) {
               <TextInput
                 style={styles.input}
                 placeholder="Entrez votre email ou mot de passe"
-                value={value}
+                value={email}
                 onBlur={(value) => onBlur(value)}
-                onChangeText={(value) => onChange(value)}
+                onChangeText={(value) => setEmail(value)}
               />
             )}
             rules={{
@@ -75,9 +97,9 @@ function SignInScreen({ navigation }) {
                 
                   secureTextEntry={hide ? true : false}
                   placeholder="Entrez votre mot de passe"
-                  value={value}
+                  value={password}
                   onBlur={(value) => onBlur(value)}
-                  onChangeText={(value) => onChange(value)}
+                  onChangeText={(value) => setPassword(value)}
                 />
                 <Icon
                   style={styles.iconPassword}
@@ -149,7 +171,7 @@ function SignInScreen({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.validationBtn}
-          onPress={handleSubmit(onSubmit)}
+          onPress={handlerRegister}
           
         >
           <Text style={styles.validationText}>
